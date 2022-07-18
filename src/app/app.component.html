@@ -7,10 +7,24 @@
     <div class="cardEmail-body p-3">
 
       <label style="float: left" >Email</label>
-      <input class="form-control m-2" type="email" placeholder="Ingrese su email" [(ngModel)]="usuario.email">
+      <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="usuario.email">
 
       <label style="float: left" >Password</label>
-      <input class="form-control m-2" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="usuario.password">
+      <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="usuario.password">
+      <label><a href="#">¿Has olvidado la contraseña?</a></label>
+
+      <Button class="btn btn-primary btn-block w-100 m-2" (click)="IngresarEmail()">Iniciar sesión</Button>
+      <Button class="btn btn-info btn-block w-100 m-2" (click)="IngresarGoogle()">Ingresar con Google</Button>
+      <label>No tienes cuenta? <a href="#">Registrarse</a></label>
+
+      <button class="btn btn-info btn-block w-100 m-2" >Crear cuenta nueva</button>
+
+      <!--
+      <div>
+        <button class="btn btn-info btn-block w-100 m-1" (click)="obtenerUsuarioLogeado()">Usuario logeado</button>
+        <button class="btn btn-info btn-block w-100 m-1" (click)="logout()">Logout</button>
+      </div>
+      -->
 
     </div>
   </div>

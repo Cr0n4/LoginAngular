@@ -17,7 +17,7 @@ export class AppComponent {
 
   }
 
-  Ingresar(){
+  IngresarEmail(){
     console.log(this.usuario);
     const { email, password } = this.usuario;
     this.authService.login(email, password).then(res => {
@@ -25,5 +25,20 @@ export class AppComponent {
     });
   }
 
+  IngresarGoogle(){
+    const { email, password } = this.usuario;
+    this.authService.loginWithGoogle(email, password).then(res => {
+      console.log("Se registro: ", res);
+    });
+  }
+  obtenerUsuarioLogeado(){
+    this.authService.getUserLogged().subscribe(res =>{
+      console.log(res?.email);
+    });
+  }
+
+  logout(){
+    this.authService.logout();
+  }
 
 }
