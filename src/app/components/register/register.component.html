@@ -1,0 +1,19 @@
+<p>register works!</p>
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      REGISTRARSE
+    </div>
+    <div class="cardEmail-body p-3">
+
+      <label style="float: left" >Email</label>
+      <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="usuario.email">
+
+      <label style="float: left" >Password</label>
+      <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="usuario.password">
+
+      <Button class="btn btn-primary btn-block w-100 m-2" (click)="registrar()">Registrarse</Button>
+      <label>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar sesion</a></label>
+    </div>
+  </div>
+</div>

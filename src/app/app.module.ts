@@ -7,28 +7,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import {AngularFireModule} from '@angular/fire/compat';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDod0OzvyytYvUl2ZSEsa6bf4uxxCpEV4g",
-  authDomain: "loginnice.firebaseapp.com",
-  projectId: "loginnice",
-  storageBucket: "loginnice.appspot.com",
-  messagingSenderId: "200969953059",
-  appId: "1:200969953059:web:3e435fdd1faad006147696",
-  measurementId: "G-GYGT4H9TTG"
-};
+import { environment } from 'src/environments/environment';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
