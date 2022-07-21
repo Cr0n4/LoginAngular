@@ -44,4 +44,11 @@ export class AuthService {
     this.afauth.signOut();
   }
 
+  forgotPassword(email : string){
+    this.afauth.sendPasswordResetEmail(email).then(() => {
+    }, err => {
+      console.log("error en enviarEmail")
+    })
+  }
+
 }

@@ -10,13 +10,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { environment } from 'src/environments/environment';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RecoverpasswordComponent } from './components/recoverpassword/recoverpassword.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecoverpasswordComponent
   ],
   imports: [
     BrowserModule,

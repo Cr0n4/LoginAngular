@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   usuario = {
+    nombre: '',
     email: '',
     password: ''
   }

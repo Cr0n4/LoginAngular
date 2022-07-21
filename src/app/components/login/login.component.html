@@ -10,7 +10,7 @@
 
       <label style="float: left" >Password</label>
       <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="usuario.password">
-      <label><a href="#">¿Has olvidado la contraseña?</a></label>
+      <label><a routerLink="/recoverpsw">¿Has olvidado la contraseña?</a></label>
 
       <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginEmail()">Iniciar sesión</Button>
       <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginGoogle()">Ingresar con Google</Button>
