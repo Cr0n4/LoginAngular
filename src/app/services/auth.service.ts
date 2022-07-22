@@ -36,9 +36,6 @@ export class AuthService {
     }
   }
 
-  UserLogin(){
-    return this.afauth.authState;
-  }
 
   logout(){
     this.afauth.signOut();
@@ -52,5 +49,12 @@ export class AuthService {
       return null;
     }
   }
+  /*
+  forgotPassword(email : string){
+    this.afauth.sendPasswordResetEmail(email).then(() => {
+    }, err => {
+      console.log("error en enviarEmail")
+    })
+  }*/
 
 }
