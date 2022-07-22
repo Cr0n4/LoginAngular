@@ -8,12 +8,14 @@
         <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginGoogle()">Ingresar con Google</Button>
       </div>
 
+      <div>
       <label style="float: left" >Email</label>
       <input class="form-control m-2" type="email" placeholder="Tu correo electronico" [(ngModel)]="usuario.email">
 
       <label style="float: left" >Contraseña</label>
       <input class="form-control m-2" type="password" placeholder="Tu contraseña" [(ngModel)]="usuario.password">
       <label style="float:left"><a routerLink="/recoverpsw">¿Has olvidado la contraseña?</a></label>
+      </div>
 
       <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginEmail()">Iniciar sesión</Button>
       <!-- <label>¿No tienes cuenta? <a routerLink="/register">Registrate</a></label> -->

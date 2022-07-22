@@ -18,6 +18,16 @@ export class LoginComponent implements OnInit {
   }
 
   LoginEmail(){
+    if(this.usuario.email == ''){
+      alert('Por favor pon un email');
+      return;
+    }
+
+    if(this.usuario.password == ''){
+      alert('Por favor pon una contraseña');
+      return;
+    }
+
     console.log(this.usuario);
     const { email, password } = this.usuario;
     this.authService.login(email, password).then(res => {

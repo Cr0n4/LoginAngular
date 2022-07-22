@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,16 @@ export class AuthService {
       return null;
     }
   }
+/*
+  login(email : string, password: string){
+    this.afauth.signInWithEmailAndPassword(email, password).then( () => {
+      localStorage.setItem('token', 'true');
+      this.router.navigate(['dashboard']);
+    }, err => {
+      console.log("error en login: ", err);
+      this.router.navigate(['/login'])
+    });
+  }*/
 
   async loginWithGoogle(email: string, password: string){
     try {
@@ -36,6 +47,9 @@ export class AuthService {
     }
   }
 
+  UserLogin(){
+    return this.afauth.authState;
+  }
 
   logout(){
     this.afauth.signOut();
@@ -45,7 +59,7 @@ export class AuthService {
     try {
       return await this.afauth.sendPasswordResetEmail(email);
     } catch  (err) {
-      console.log("error en enviar email",);
+      console.log("error en enviar email");
       return null;
     }
   }
