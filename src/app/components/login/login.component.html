@@ -4,21 +4,23 @@
       LOGIN
     </div>
     <div class="cardEmail-body p-3">
+      <div>
+        <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginGoogle()">Ingresar con Google</Button>
+      </div>
 
       <label style="float: left" >Email</label>
-      <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="usuario.email">
+      <input class="form-control m-2" type="email" placeholder="Tu correo electronico" [(ngModel)]="usuario.email">
 
-      <label style="float: left" >Password</label>
-      <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="usuario.password">
-      <label><a routerLink="/recoverpsw">¿Has olvidado la contraseña?</a></label>
+      <label style="float: left" >Contraseña</label>
+      <input class="form-control m-2" type="password" placeholder="Tu contraseña" [(ngModel)]="usuario.password">
+      <label style="float:left"><a routerLink="/recoverpsw">¿Has olvidado la contraseña?</a></label>
 
       <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginEmail()">Iniciar sesión</Button>
-      <Button class="btn btn-primary btn-block w-100 m-2" (click)="LoginGoogle()">Ingresar con Google</Button>
-      <label>¿No tienes cuenta? <a routerLink="/register">Registrate</a></label>
-      <button class="btn btn-primary btn-block w-100 m-2" >Crear cuenta</button>
+      <!-- <label>¿No tienes cuenta? <a routerLink="/register">Registrate</a></label> -->
+      <button class="btn btn-primary btn-block w-100 m-2" routerLink="/register">Crear cuenta</button>
 
       <div>
-        <button class="btn btn-primary btn-block m-1" (click)="UserActual()">Usuario logeado</button>
+        <button (click)="UserActual()">Usuario logeado</button>
         <button class="btn btn-primary btn-block m-1" (click)="logout()">Logout</button>
       </div>
 
