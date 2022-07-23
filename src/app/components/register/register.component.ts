@@ -8,16 +8,35 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  usuario = {
+  user = {
     nombre: '',
     email: '',
     password: ''
   }
 
-  constructor(private authService: AuthService){
+  constructor(private authService: AuthService){ }
 
+  ngOnInit(): void {
   }
 
+  register() {
+    if(this.user.email == ''){
+      alert('Por favor pon un email');
+      return;
+    }
+
+    if(this.user.password == ''){
+      alert('Por favor pon una contraseña');
+      return;
+    }
+
+    this.authService.register(this.user.email,this.user.password);
+    this.user.email = '';
+    this.user.password = '';
+  }
+
+
+  /*
   registrar(){
     console.log(this.usuario);
     const { email, password } = this.usuario;
@@ -25,8 +44,7 @@ export class RegisterComponent implements OnInit {
       console.log("Se registro: ", res);
     });
   }
+*/
 
-  ngOnInit(): void {
-  }
 
 }

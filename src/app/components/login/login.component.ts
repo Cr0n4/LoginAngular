@@ -8,15 +8,39 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  usuario = {
+  /*user = {
     email: '',
     password: ''
+  }*/
+  email : string = '';
+  password : string = '';
+  constructor(private authService: AuthService){}
+
+  ngOnInit(): void {
   }
 
-  constructor(private authService: AuthService){
+  login() {
+    if(this.email == ''){
+      alert('Por favor pon un email');
+      return;
+    }
 
+    if(this.password == ''){
+      alert('Por favor pon una contraseña');
+      return;
+    }
+
+    this.authService.login(this.email,this.password);
+    this.email = '';
+    this.password = '';
   }
 
+  logout(){
+    this.authService.logout();
+  }
+
+
+  /*
   LoginEmail(){
     if(this.usuario.email == ''){
       alert('Por favor pon un email');
@@ -50,9 +74,7 @@ export class LoginComponent implements OnInit {
   logout(){
     this.authService.logout();
   }
+  */
 
-
-  ngOnInit(): void {
-  }
 
 }

@@ -8,18 +8,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RecoverpasswordComponent implements OnInit {
 
-  email: string = '';
-
-  constructor(private authService: AuthService){
-
+  user = {
+    email: ''
   }
+
+
+  constructor(private authService: AuthService){ }
 
   ngOnInit(): void {
   }
 
   forgotPassword() {
-    this.authService.forgotPassword(this.email);
-    this.email = '';
+    this.authService.forgotPassword(this.user.email);
+    this.user.email = '';
   }
 
 }

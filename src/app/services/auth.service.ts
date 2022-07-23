@@ -7,9 +7,56 @@ import firebase from 'firebase/compat/app';
 })
 export class AuthService {
 
-  constructor(private afauth: AngularFireAuth) { }
+  constructor(private afauth: AngularFireAuth, private router: Router) { }
 
 
+
+  //login
+  login(email : string, password: string){
+    this.afauth.signInWithEmailAndPassword(email, password).then( () => {
+      localStorage.setItem('token', 'true');
+      this.router.navigate(['/home']);
+    }, err => {
+      console.log("error en login: ", err);
+      this.router.navigate(['/login'])
+    });
+  }
+
+  //register
+  register(email : string, password : string) {
+    this.afauth.createUserWithEmailAndPassword(email, password).then(() => {
+      console.log("se registro correctamente");
+      alert("Tu cuenta se registro correctamente");
+      this.router.navigate(['/login']);
+    }, err => {
+      console.log("error en register: ", err);
+      this.router.navigate(['/register'])
+    })
+  }
+
+  //forgotpasswrd
+  forgotPassword(email : string){
+    this.afauth.sendPasswordResetEmail(email).then(() => {
+      this.router.navigate(['/login']);
+      console.log("se envio tu mail");
+    }, err => {
+      console.log("error enviar mail a restaurar contrasenia", err);
+      this.router.navigate(['/login'])
+    })
+  }
+
+  //logout
+  logout(){
+    this.afauth.signOut().then( () => {
+      localStorage.removeItem('token');
+      this.router.navigate(['/login']);
+    }, err => {
+      console.log(err.message);
+    })
+  }
+
+
+/*
   async login(email: string, password: string){
     try {
       return await this.afauth.signInWithEmailAndPassword(email, password);
@@ -18,16 +65,6 @@ export class AuthService {
       return null;
     }
   }
-/*
-  login(email : string, password: string){
-    this.afauth.signInWithEmailAndPassword(email, password).then( () => {
-      localStorage.setItem('token', 'true');
-      this.router.navigate(['dashboard']);
-    }, err => {
-      console.log("error en login: ", err);
-      this.router.navigate(['/login'])
-    });
-  }*/
 
   async loginWithGoogle(email: string, password: string){
     try {
@@ -62,13 +99,6 @@ export class AuthService {
       console.log("error en enviar email");
       return null;
     }
-  }
-  /*
-  forgotPassword(email : string){
-    this.afauth.sendPasswordResetEmail(email).then(() => {
-    }, err => {
-      console.log("error en enviarEmail")
-    })
   }*/
 
 }

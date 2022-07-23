@@ -18,7 +18,7 @@ import { RecoverpasswordComponent } from './components/recoverpassword/recoverpa
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    RecoverpasswordComponent
+    RecoverpasswordComponent,
   ],
   imports: [
     BrowserModule,

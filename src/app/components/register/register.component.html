@@ -7,18 +7,18 @@
     <div class="cardEmail-body p-3">
 
       <label style="float: left" >Name</label>
-      <input class="form-control m-2" type="name" placeholder="Nombre completo" [(ngModel)]="usuario.nombre">
+      <input class="form-control m-2" type="name" placeholder="Nombre completo" [(ngModel)]="user.nombre">
 
       <label style="float: left" >Email</label>
-      <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="usuario.email">
+      <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="user.email">
 
       <label style="float: left" >Password</label>
-      <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="usuario.password">
+      <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="user.password">
 
       <label style="float: left" >Repeat Password</label>
-      <input class="form-control m-2" type="password" placeholder="Repite tu contraseña" [(ngModel)]="usuario.password">
+      <input class="form-control m-2" type="password" placeholder="Repite tu contraseña" [(ngModel)]="user.password">
 
-      <Button class="btn btn-primary btn-block w-100 m-2" (click)="registrar()">Registrarse</Button>
+      <Button class="btn btn-primary btn-block w-100 m-2" (click)="register()">Registrarse</Button>
       <label>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar sesion</a></label>
     </div>
   </div>
