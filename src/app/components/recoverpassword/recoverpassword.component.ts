@@ -12,7 +12,6 @@ export class RecoverpasswordComponent implements OnInit {
     email: ''
   }
 
-
   constructor(private authService: AuthService){ }
 
   ngOnInit(): void {
@@ -21,6 +20,7 @@ export class RecoverpasswordComponent implements OnInit {
   forgotPassword() {
     this.authService.forgotPassword(this.user.email);
     this.user.email = '';
+
   }
 
 }

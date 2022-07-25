@@ -1,7 +1,33 @@
 .container{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+.body {
+  background-image: linear-gradient(to right, #0d0106,#3626A7);
+}
+
+#left {
+  position: relative;
+  left: 5rem;
+}
+
+#right {
+  position: relative;
+  right: 5rem;
+}
+
+
+#img {
+  max-width: 450px;
+  max-height: 450px;
+  object-fit: contain;
+  position: relative;
+  left: 5rem;
+
 }

@@ -1,25 +1,37 @@
-<p>register works!</p>
-<div class="container">
-  <div class="card text-center">
-    <div class="card-header">
-      REGISTRARSE
-    </div>
-    <div class="cardEmail-body p-3">
+<body class="body">
+  <header>
+  </header>
 
-      <label style="float: left" >Name</label>
-      <input class="form-control m-2" type="name" placeholder="Nombre completo" [(ngModel)]="user.nombre">
+  <div class="container">
+    <div class="card text-center">
+      <div class="card-header">
+        Crear cuenta
+      </div>
+      <div class="cardEmail-body p-3">
 
-      <label style="float: left" >Email</label>
-      <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="user.email">
+        <div>
+          <label style="float: left" >Nombre</label>
+          <input class="form-control m-2" type="name" placeholder="Nombre completo" [(ngModel)]="user.nombre">
+        </div>
 
-      <label style="float: left" >Password</label>
-      <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="user.password">
+        <div>
+          <label style="float: left" >Email</label>
+          <input class="form-control m-2" type="email" placeholder="Correo electronico" [(ngModel)]="user.email">
+        </div>
 
-      <label style="float: left" >Repeat Password</label>
-      <input class="form-control m-2" type="password" placeholder="Repite tu contraseña" [(ngModel)]="user.password">
-
-      <Button class="btn btn-primary btn-block w-100 m-2" (click)="register()">Registrarse</Button>
-      <label>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar sesion</a></label>
+        <div>
+          <label style="float: left" >Contraseña</label>
+          <input class="form-control m-2" type="password" placeholder="Contraseña" [(ngModel)]="user.password">
+        </div>
+          <!--
+          <label style="float: left" >Repeat Password</label>
+          <input class="form-control m-2" type="password" placeholder="Repite tu contraseña" [(ngModel)]="user.password">
+          -->
+        <div>
+          <Button class="btn btn-primary btn-block w-100 m-2" (click)="register()">Registrarse</Button>
+          <label>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></label>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>

@@ -1,7 +1,33 @@
 .container{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+.body {
+  background-image: linear-gradient(to right, #0d0106,#3626A7);
+  background-color: #0d0106;
+}
+
+#left {
+  width: 65%;
+}
+
+#right {
+  width: 35%;
+  justify-content: center;
+}
+
+
+
+#img {
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+  margin-left: 50px;
+
 }

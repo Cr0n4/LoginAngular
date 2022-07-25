@@ -7,14 +7,18 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  user = {
+    email : ''
+  }
 
-  constructor(private auth : AuthService) { }
+
+  constructor(private authService : AuthService) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    this.auth.logout();
+    this.authService.logout();
   }
 
 }

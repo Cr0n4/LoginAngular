@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/compat/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider } from '@firebase/auth';
 import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  getUserLogged() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private afauth: AngularFireAuth, private router: Router) { }
 
@@ -55,50 +60,17 @@ export class AuthService {
     })
   }
 
-
-/*
-  async login(email: string, password: string){
-    try {
-      return await this.afauth.signInWithEmailAndPassword(email, password);
-    } catch  (err) {
-      console.log("error en login: ", err);
-      return null;
-    }
+  loginGoogle(){
+    return this.afauth.signInWithPopup(new GoogleAuthProvider).then(res => {
+      this.router.navigate(['/home']);
+      localStorage.setItem('token',JSON.stringify(res.user?.uid));
+    }, err => {
+      console.log(err.message);
+    })
   }
 
-  async loginWithGoogle(email: string, password: string){
-    try {
-      return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    } catch  (err) {
-      console.log("error en login con google: ", err);
-      return null;
-    }
-  }
-
-  async register(email: string, password: string){
-    try {
-      return await this.afauth.createUserWithEmailAndPassword(email, password);
-    } catch  (err) {
-      console.log("error en login: ", err);
-      return null;
-    }
-  }
-
-  UserLogin(){
+  actualUser(){
     return this.afauth.authState;
   }
-
-  logout(){
-    this.afauth.signOut();
-  }
-
-  async forgotPassword(email : string){
-    try {
-      return await this.afauth.sendPasswordResetEmail(email);
-    } catch  (err) {
-      console.log("error en enviar email");
-      return null;
-    }
-  }*/
 
 }

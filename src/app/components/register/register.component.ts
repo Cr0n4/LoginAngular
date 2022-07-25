@@ -35,16 +35,4 @@ export class RegisterComponent implements OnInit {
     this.user.password = '';
   }
 
-
-  /*
-  registrar(){
-    console.log(this.usuario);
-    const { email, password } = this.usuario;
-    this.authService.register(email, password).then(res => {
-      console.log("Se registro: ", res);
-    });
-  }
-*/
-
-
 }
